@@ -1058,6 +1058,8 @@ util.markdown_link = function(opts)
   end
 
   local path = util.urlencode(opts.path, { keep_path_sep = true })
+  -- Add leading slash to the path
+  path = "/" .. path
   return string.format("[%s%s](%s%s)", opts.label, header, path, anchor)
 end
 
